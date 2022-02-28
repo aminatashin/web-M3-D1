@@ -9,19 +9,18 @@ const line = function(number){
     console.log("exersice" , number)
 }
 
-
+line('1')
 const sum = function(a,b){
     if(a===b){
         
-        return 3*(a+b)
-    }else {
+        return (a+b) * 3;
+    } else {
         
-        return (a+b)
+        return (a+b);
 
     }
-}
-sum(4,5)
-
+};
+console.log(sum(3,3))
 
 
 
@@ -43,12 +42,11 @@ const check = function(a,b){
 Create a function to remove a character at the specified position of a given string and return the new string.
 */
 line("3")
-let arr = ["lion" , 'frog' , 'dog']
-const remove = function(){
-arr.slice([0])
-return arr.push('cow');
+
+const remove = function(str , pos){
+return str.slice(0,pos) + str.slice(pos+1)
 }
-remove()
+console.log(remove("strive",3))
 
 
 
@@ -75,10 +73,12 @@ Create a function to check whether two numbers are in range 40..60 or in the ran
 */
 line("5")
 const range = function(a,b){
-    if(a >= 40 || a <= 60 || b >= 40 || b <= 60){
-        return true;
-    }else{
-        return false;
+    if(a >= 40 && a <= 60 && b >= 40 && b <= 60){
+        console.log('a and b in range 40..60')
+    }else if (a >= 70 && a <= 100 && b >= 70 && b <= 100){
+        console.log('a and b in range 70..100')
+    } else{
+        return false
     }
 }
 range(45,55)
@@ -88,26 +88,51 @@ range(45,55)
 
 Create a function to create a new string of specified copies (positive number) of a given string.
 */
-
+line('6')
+const creatCopies = function(str,n){
+    if (n <= 0){
+        return "n should be positive";
+    } else {
+        let copies = "";
+        for (let i = 0; i < n ; i++) {
+            copies += str ;
+        }
+        
+        return copies
+    }
+    
+}
+console.log(creatCopies("amin",5))
 /*
 
 7)
 Create a function to display the city name if the string begins with "Los" or "New" otherwise return blank.
 */
 line("7")
-// const city = function(name){
-// if (){
-//    return console.log(name)
-// }else{
-//     return console.log('blank')
-// }
-// }
-// city('losangeles')
+
+const city = function(str){
+if (str.startsWith('los') ||str.startsWith('new') ){
+   return console.log(str)
+}else{
+    return console.log('blank')
+}
+}
+city('losangeles')
+city('alobama')
 /*
 8)
 Crate a function to calculate the sum of three elements of a given array of integers of length 3.
 */
+line('8')
 
+ const calSum = function(...args){
+     let sum = 0
+     for(let i = 0 ; i< args.length ; i++){
+         sum +=args[i]
+     }
+     return sum
+ }
+ console.log(calSum(3,5,2))
 /*
 
 9)
@@ -115,27 +140,57 @@ Create a function to test whether an array of integers of length 2 contains 1 or
 */
 line('9')
 
-function is13(nums) {
-    if (nums.indexOf(1) == 0 || nums.indexOf(3) == 0){
-        return true;
-    } else {
-        return false;
+const test = function(arr) {
+    // if (arr[0]===1 || arr[0]===3 || arr[1]===1 || arr[1]===3) {
+    //    console.log('contains')
+    // } else {
+    //     console.log('doesnt contain')
+    // }
+    if(arr.includes(1) || arr.includes(3)){
+        console.log('contains')
+    }else{
+        console.log('doesnt contain')
     }
   }
-  
-  console.log(is13([7, 8]));
-  console.log(is13([3, 2]));
-  console.log(is13([0, 1])); 
+  test([1,6])
+ 
 /*
-
 10)
 
 Create a function to test whether an array of integers of length 2 does not contain 1 or a 3
+/*
+*/
+line('10')
+const test2 = function(arr){
+    if(arr[0]!== 1 || arr[0]!==3 ||arr[1]!== 1 || arr[1]!==3 ){
+       console.log('doesnt contain')
+    } else{
+        console.log('contains')
+    }
+    
+}
+test2([3,7])
 
+/*
 11)
 
 Create a function to find the longest string from a given array of strings.
 
+*/
+line('11')
+
+const getLongest = function (arr){
+const temp = [];
+for(let i=0 ; i< arr.length ; i++){
+    temp.push(arr[i].length);
+}
+
+    const largest = [...temp].sort((a,b)=> b - a)[0];
+    const index = temp.indexOf(largest);
+     return arr[index];
+}
+console.log(getLongest(['aa','cccccc','dd']))
+/*
 12)
 
 Create a function to find the types of a given angle.
@@ -145,15 +200,57 @@ Types of angles:
     Right angle: An 90 degree angle.
     btuse angle: An angle between 90 and 180 degrees.
     Straight angle: A 180 degree angle.
+*/
 
+line('12')
+const anglesType = function(angle){
+    if(angle<90){
+        return 'acute'
+    } else if(angle===90){
+        return 'right'
+    } else if ((angle>90) && (angle<180)){
+        return 'btuse'
+    } else if (angle === 180){
+        return 'straight'
+    }
+}
+console.log( anglesType(120))
+
+/*
 13)
 
 Create a function to find the index of the greatest element of a given array of integers
-
+*/
+line('13')
+const greatest = function(arr){
+    
+  
+   const higherNumber = [...arr].sort((a,b)=> b - a)[0]
+//   console.log(higherNumber)
+  return arr.indexOf(higherNumber)
+}
+console.log(greatest([3,9,25]))
+/*
+/**
 14)
 
 Create a function to get the largest even number from an array of integers.
+*/
+line('14')
 
+const even = function(arr){
+   let yem = []
+   for(let i =0 ; i<arr.length; i++){
+       if(arr[i]%2===0){
+           yem.push(arr[i])
+       }
+   }
+   return yem.sort((a,b)=> b-a)[0];
+
+
+}
+console.log(even([2,7,8,12,18,3]))
+/*
 16)
 
 Create a function to check from two given integers, whether one is positive and another one is negative.
