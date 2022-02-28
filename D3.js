@@ -1,15 +1,22 @@
+
+
 /*
 
 1)
 Create a function to calculate the sum of the two given integers. If the two values are same, then returns triple their sum.
 */
+const line = function(number){
+    console.log("exersice" , number)
+}
+
+
 const sum = function(a,b){
-    if(a!==b){
-        let y = (a+b)
-        return y
-    }else if(a===b){
-        let x = (3*(a+b))
-        return x
+    if(a===b){
+        
+        return 3*(a+b)
+    }else {
+        
+        return (a+b)
 
     }
 }
@@ -22,30 +29,59 @@ sum(4,5)
 2)
 Create a function to check two given numbers and return true if one of the number is 50 or if their sum is 50.
 */
+line("2")
 const check = function(a,b){
-    if(a===50 || b===50){
+    if(a===50 || b===50 || (a+b===50)){
         return true
-    }else if(a+b===50){
-        return true
-    }else{
-        console.log("error")
+    }else {
+        return false
+    
     }
 }
 /*
 3)
 Create a function to remove a character at the specified position of a given string and return the new string.
 */
+line("3")
+let arr = ["lion" , 'frog' , 'dog']
+const remove = function(){
+arr.slice([0])
+return arr.push('cow');
+}
+remove()
+
+
 
 /*
 
 4)
  Create a function to find the largest of three given integers.
 */
+line("4")
 
-/*
-5)
+const largest = function (a,b,c){
+    if(a>b && a>c){
+        console.log(a);
+    }else if (b> a && b>c){
+        console.log (b);
+    }else{
+        console.log (c);
+    }
+}
+largest(5,9,6)
+
+/*5)
 Create a function to check whether two numbers are in range 40..60 or in the range 70..100 inclusive.
 */
+line("5")
+const range = function(a,b){
+    if(a >= 40 || a <= 60 || b >= 40 || b <= 60){
+        return true;
+    }else{
+        return false;
+    }
+}
+range(45,55)
 
 /*
 6) 
@@ -58,10 +94,18 @@ Create a function to create a new string of specified copies (positive number) o
 7)
 Create a function to display the city name if the string begins with "Los" or "New" otherwise return blank.
 */
-
+line("7")
+// const city = function(name){
+// if (){
+//    return console.log(name)
+// }else{
+//     return console.log('blank')
+// }
+// }
+// city('losangeles')
 /*
 8)
-Create a function to calculate the sum of three elements of a given array of integers of length 3.
+Crate a function to calculate the sum of three elements of a given array of integers of length 3.
 */
 
 /*
@@ -69,7 +113,19 @@ Create a function to calculate the sum of three elements of a given array of int
 9)
 Create a function to test whether an array of integers of length 2 contains 1 or a 3. 
 */
+line('9')
 
+function is13(nums) {
+    if (nums.indexOf(1) == 0 || nums.indexOf(3) == 0){
+        return true;
+    } else {
+        return false;
+    }
+  }
+  
+  console.log(is13([7, 8]));
+  console.log(is13([3, 2]));
+  console.log(is13([0, 1])); 
 /*
 
 10)
